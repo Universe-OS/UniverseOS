@@ -6,6 +6,8 @@ ident   UniverseOS
 makeoptions	DEBUG=-g
 makeoptions	WITH_CTF=1
 
+MODULES_OVERRIDE=""g
+
 nooptions 	NFSCL
 nooptions 	NFSD
 nooptions 	NFSLOCKD
