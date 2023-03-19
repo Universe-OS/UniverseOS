@@ -18,15 +18,15 @@ cd $_KERNSRCPATH
 
 echo "Making dirs..."
 mkdir -p $_ROOTFS
-make distrib-dirs -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make distrib-dirs -j$_JOBS DESTDIR=$_ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Making dirs finished"
 
 echo "Building system..."
-make buildworld   -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
-make buildkernel  -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make buildworld   -j$_JOBS DESTDIR=$_ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make buildkernel  -j$_JOBS DESTDIR=$_ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Building system finished"
 
 echo "Installing system..."
-meke installworld   -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
-make installkernel  -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+meke installworld   -j$_JOBS DESTDIR=$_ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make installkernel  -j$_JOBS DESTDIR=$_ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Installing system finished"
