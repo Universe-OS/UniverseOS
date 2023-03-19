@@ -10,11 +10,13 @@ _BASEPATH=`sh -c "cd \"$_BASEPATH\" && pwd"`
 
 _KERNSRCPATH="/usr/src"
 _ROOTFS="/$_BASEPATH/$_OSNAME"
-_KERNCONF="/$_BASEPATH/$_ARCH/conf/$_OSNAME"
+
+_KERNCONF="/$_ARCH/conf/$_OSNAME"
 _SRCCONF="/$_BASEPATH/src.conf"
 
 set -e
 cd $_KERNSRCPATH
+ln -s $_KERNCONF $_KERNSRCPATH$_KERNCONF
 
 echo "Making dirs..."
 mkdir -p $_ROOTFS
