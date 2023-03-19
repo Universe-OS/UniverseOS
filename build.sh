@@ -16,12 +16,12 @@ set -e
 cd $_KERNSRCPATH
 
 echo "Making dirs..."
-mkdir -R $_ROOTFS
+mkdir -p $_ROOTFS
 make distrib-dirs DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Making dirs finished"
 
 echo "Building system..."
-meke buildworld   DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make buildworld   DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 make buildkernel  DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Building system finished"
 
