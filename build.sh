@@ -9,9 +9,9 @@ _BASEPATH=`dirname "$0"`
 _BASEPATH=`sh -c "cd \"$_BASEPATH\" && pwd"`
 
 _KERNSRCPATH="/usr/src"
-_ROOTFS="$_BASEPATH/$_OSNAME"
-_KERNCONF="$_BASEPATH/$_ARCH/conf/$_OSNAME"
-_SRCCONF="$_BASEPATH/src.conf"
+_ROOTFS="/$_BASEPATH/$_OSNAME"
+_KERNCONF="/$_BASEPATH/$_ARCH/conf/$_OSNAME"
+_SRCCONF="/$_BASEPATH/src.conf"
 
 set -e
 cd $_KERNSRCPATH
