@@ -2,6 +2,7 @@
 
 _OSNAME="UniverseOS"
 _ARCH="amd64"
+_JOBS="4"
 
 _BASEPATH=`dirname "$0"`
 # this is optional - to get absolute
@@ -17,15 +18,15 @@ cd $_KERNSRCPATH
 
 echo "Making dirs..."
 mkdir -p $_ROOTFS
-make distrib-dirs DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make distrib-dirs -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Making dirs finished"
 
 echo "Building system..."
-make buildworld   DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
-make buildkernel  DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make buildworld   -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make buildkernel  -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Building system finished"
 
 echo "Installing system..."
-meke installworld   DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
-make installkernel  DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+meke installworld   -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
+make installkernel  -j$_JOBS DESTDIR=$ROOTFS KERNCONF=$_KERNCONF SRCCONF=$_SRCCONF
 echo "Installing system finished"
