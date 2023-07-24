@@ -1,12 +1,12 @@
 include GENERIC
 
-cpu		HAMMER
+cpu     HAMMER
 ident   UniverseOS
 
 #makeoptions	DEBUG=-g
 #makeoptions	WITH_CTF=1
 
-MODULES_OVERRIDE=""
+makeoptions MODULES_OVERRIDE=""
 
 # NODEBUG
 
