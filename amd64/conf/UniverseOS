@@ -6,7 +6,9 @@ ident   UniverseOS
 #makeoptions	DEBUG=-g
 #makeoptions	WITH_CTF=1
 
-makeoptions MODULES_OVERRIDE=""
+makeoptions	NO_MODULES=1
+
+#makeoptions MODULES_OVERRIDE=""
 
 # NODEBUG
 
