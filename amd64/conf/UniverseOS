@@ -195,7 +195,6 @@ options 	CC_DCTCP
 options 	CC_HD
 options 	CC_HTCP
 options 	CC_NEWRENO
-options 	CC_VEGAS
 options 	RATELIMIT		    # TX rate limiting support
 
 options 	TCP_OFFLOAD		    # TCP offload support.
