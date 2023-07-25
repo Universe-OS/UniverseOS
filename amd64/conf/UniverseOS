@@ -213,7 +213,6 @@ device		enc # IPsec interface.
 
 # TLS framing and encryption/decryption of data over TCP sockets.
 options 	KERN_TLS		    # TLS transmit and receive offload
-options 	NETLINK             # Netlink kernel/user<>kernel/user messaging interface
 
 options 	LIBMCHAIN           # mchain library. It can be either loaded as KLD or compiled into kernel
 options 	LIBALIAS            # libalias library, performing NAT
@@ -457,27 +456,27 @@ options 	MAC_VERIEXEC_SHA384
 options 	MAC_VERIEXEC_SHA512
 device		mac_veriexec_parser
 
-device		scbus		#base SCSI code
-device		ch		#SCSI media changers
-device		da		#SCSI direct access devices (aka disks)
-device		sa		#SCSI tapes
-device		cd		#SCSI CD-ROMs
-device		ses		#Enclosure Services (SES and SAF-TE)
-device		pt		#SCSI processor
-device		targ		#SCSI Target Mode Code
-device		targbh		#SCSI Target Mode Blackhole Device
-device		pass		#CAM passthrough driver
-device		sg		#Linux SCSI passthrough
-device		ctl		#CAM Target Layer
+device		scbus		    #base SCSI code
+device		ch		        #SCSI media changers
+device		da		        #SCSI direct access devices (aka disks)
+device		sa		        #SCSI tapes
+device		cd		        #SCSI CD-ROMs
+device		ses		        #Enclosure Services (SES and SAF-TE)
+device		pt		        #SCSI processor
+device		targ		    #SCSI Target Mode Code
+device		targbh		    #SCSI Target Mode Blackhole Device
+device		pass		    #CAM passthrough driver
+device		sg		        #Linux SCSI passthrough
+device		ctl		        #CAM Target Layer
 
-device		pty		#BSD-style compatibility pseudo ttys
-device		nmdm		#back-to-back tty devices
-device		md		#Memory/malloc disk
-device		snp		#Snoop device - to look at pty/vty/etc..
-device		ccd		#Concatenated disk driver
-device		firmware	#firmware(9) support
+device		pty		        #BSD-style compatibility pseudo ttys
+device		nmdm		    #back-to-back tty devices
+device		md		        #Memory/malloc disk
+device		snp		        #Snoop device - to look at pty/vty/etc..
+device		ccd		        #Concatenated disk driver
+device		firmware	    #firmware(9) support
 
-options 	LIBICONV # Kernel side iconv library
+options 	LIBICONV        # Kernel side iconv library
 
 
 nooptions	INVARIANTS
