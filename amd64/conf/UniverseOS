@@ -179,22 +179,6 @@ device		amdsmn
 options 	INET			    #Internet communications protocols
 options 	INET6			    #IPv6 communications protocols
 
-# Note if you include INET/INET6 or both options
-# You *must* define at least one of the congestion control
-# options or the compile will fail. GENERIC defines
-# options CC_CUBIC. You may want to specify a default
-# if multiple congestion controls are compiled in.
-# The string in default is the name of the
-# cc module as it would appear in the sysctl for
-# setting the default. The code defines CUBIC
-# as default, or the sole cc_module compiled in.
-options 	CC_CDG
-options 	CC_CHD
-options 	CC_CUBIC
-options 	CC_DCTCP
-options 	CC_HD
-options 	CC_HTCP
-options 	CC_NEWRENO
 options 	RATELIMIT		    # TX rate limiting support
 
 options 	TCP_OFFLOAD		    # TCP offload support.
